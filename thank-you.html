@@ -45,7 +45,7 @@
     return params.get(name);
   }
 
-  const qrData = new URLSearchParams(window.location.search).get("qr");
+  const qrData = getQueryParam("qr");
 
   if (qrData) {
     new QRCode(document.getElementById("qrcode"), {
