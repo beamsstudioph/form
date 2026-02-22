@@ -37,6 +37,11 @@
   </style>
 </head>
 <script>
+  window.onload = function () {
+    const form = document.querySelector("form");
+    if (form) form.reset();
+  };
+
   (function () {
 
     function generateRandomId(length) {
