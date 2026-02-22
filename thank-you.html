@@ -45,11 +45,11 @@
     return params.get(name);
   }
 
-  const qrData = getQueryParam("qr");
+  const qrData = new URLSearchParams(window.location.search).get("qr");
 
   if (qrData) {
     new QRCode(document.getElementById("qrcode"), {
-      text: qrData,
+      text: decodeURIComponent(qrData),
       width: 220,
       height: 220
     });
