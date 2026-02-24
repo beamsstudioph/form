@@ -89,6 +89,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   });
 });
+
+window.addEventListener("pageshow", function (event) {
+  if (event.persisted) {
+    const form = document.querySelector("form");
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Get My QR Code";
+    form.reset();
+  }
+});
 </script>
 <body>
 
